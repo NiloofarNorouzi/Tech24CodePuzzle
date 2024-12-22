@@ -1,0 +1,100 @@
+﻿@{
+	ViewData["Title"] = "Shape Drawer";
+	string shapeName = ViewBag.shapeName ?? "";
+}
+<link rel="stylesheet" href="~/css/shape.css">
+
+<form asp-action="DrawShape" method="post">
+
+	<div class="container">
+		<h1>Shape Drawing Page</h1>
+		<div class="form-group">
+			<label for="shapeCommand">Enter Shape Command:</label>
+			<input type="text" id="shapeCommand" name="shapeCommand" placeholder="e.g., Draw a circle with a radius of 100">
+		</div>
+		<button id="drawShapeButton" type="submit">Draw Shape</button>
+		@if (ViewBag.ErrorMessage != null)
+		{
+			<label class="error-label">@ViewBag.ErrorMessage</label>
+		}
+		<div class="shape-container">
+
+
+			<canvas id="myCanvas" width="1500" height="300"></canvas>
+		</div>
+	</div>
+
+	<script src="~/js/shape.js"></script>
+</form>
+
+<div class="help-table-container">
+	<table>
+		<thead>
+			<tr>
+				<th>Shape</th>
+
+				<th>Key Measurements</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Circle</td>
+				<td>Draw a circle with a radius of 100</td>
+
+			</tr>
+			<tr>
+				<td>Square</td>
+
+				<td>Draw a square with a side length of 200</td>
+
+			</tr>
+			<tr>
+				<td>Rectangle</td>
+
+				<td>Draw a rectangle with a width of 250 and a height of 400</td>
+
+			</tr>
+			<tr>
+				<td>Triangle (Isosceles)</td>
+
+				<td>Draw an IsoscelesTriangle with a height of 200 and a width of 100</td>
+
+			</tr>
+
+		</tbody>
+	</table>
+</div>
+
+
+<script>
+	console.log("Code is running!");
+
+	const shapeName = "@shapeName";
+	const shapeDimention = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.shapeDimensions));
+	console.log(shapeName);
+	if(shapeDimention != null){
+		console.log(shapeDimention["Radius"]);
+	}
+
+	if(shapeDimention != null){
+		if (shapeName == 'Circle'){
+			drawCircle(shapeDimention["Radius"]);
+		}else if(shapeName == 'Rectangle'){
+			drawRectangle(shapeDimention["Width"], shapeDimention["Height"])
+		}else if(shapeName == 'Square'){
+			drawRectangle(shapeDimention["SideLenght"], shapeDimention["SideLenght"])
+		}else if(shapeName == 'Isosceles Triangle'){
+			drawIsoscelesTriangle(shapeDimention["Width"], shapeDimention["Height"])
+		}
+		else{
+			console.log("Invalid parameters")
+		}
+	}
+	console.log("Draw is done!");
+
+
+</script>
+
+
+

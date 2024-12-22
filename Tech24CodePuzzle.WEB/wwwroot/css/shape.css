@@ -1,0 +1,152 @@
+
+
+
+.container {
+    background: #ffffff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+
+    .container h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #2c3e50;
+    }
+
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+    .form-group label {
+        display: block;
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 5px;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+        color: #333;
+    }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+        }
+
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    button:hover {
+        background-color: #2980b9;
+    }
+
+
+.shape-container {
+    margin-top: 20px;
+    background: #ecf0f1;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px dashed #bdc3c7;
+    position: relative;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+    .shape-container p {
+        font-size: 16px;
+        color: #7f8c8d;
+    }
+
+.shape {
+    position: absolute;
+}
+
+
+
+
+
+
+/*Table*/
+
+
+.help-table-container h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+    table thead {
+        background-color: #3498db;
+        color: white;
+    }
+
+        table thead th {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+    table tbody tr {
+        border-bottom: 1px solid #ddd;
+    }
+
+        table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+    table tbody td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+
+.highlight {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+
+
+
+.error-label {
+    display: block;
+    color: red;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 20px;
+}
