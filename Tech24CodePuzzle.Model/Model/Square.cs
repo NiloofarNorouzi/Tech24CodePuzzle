@@ -8,12 +8,12 @@ namespace Tech24CodePuzzle.Model
 {
     public class Square : IShape
     {
-        public string Name => "square";
+        public string Name => "Square";
         public Dictionary<string, double> Dimensions { get; }
 
         public Square(double sidelength)
         {
-            Dimensions = new Dictionary<string, double> { { "sidelenght", sidelength } };
+            Dimensions = new Dictionary<string, double> { { "SideLenght", sidelength } };
         }
     }
 }
